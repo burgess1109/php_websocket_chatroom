@@ -80,7 +80,7 @@
 <script language="javascript" type="text/javascript">
     jQuery(function($) {
         //create a new WebSocket object.(建立socket物件)
-        var wsUri = "ws://localhost:9000/web_socket/Chat-Using-WebSocket-and-PHP-Socket-master/server.php";
+        var wsUri = "<?php echo $socket_url;?>";
         websocket = new WebSocket(wsUri);
         websocket.onopen = function(ev) { // connection is open (socket連接時觸發的事件)
             if(ev.isTrusted && ev.type=='open'){
