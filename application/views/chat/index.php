@@ -107,6 +107,16 @@
         }
 
         $('#send-btn').click(function(){ //use clicks message send button
+            message_send();
+        });
+
+        $('#msgbox').keypress(function(event){ //按下Enter 自動送出訊息
+            if(event.keyCode==13){
+                message_send();
+            }
+        });
+
+        function message_send(){
             var mymessage = $('#msgbox').val(); //get message text
             var myname = '<?php echo $username;?>'; //get user name
 
@@ -129,7 +139,7 @@
             };
             //convert and send data to server (連接傳送數據)
             websocket.send(JSON.stringify(msg));
-        });
+        }
 
         $('#leave-btn').click(function(){
             websocket.close();
