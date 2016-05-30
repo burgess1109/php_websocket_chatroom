@@ -21,6 +21,8 @@ class Chat extends CI_Controller {
         $data['socket_url'] = "ws://localhost:9000/web_socket/Chat-Using-WebSocket-and-PHP-Socket-master/CI_talk/php_websocket_chatroom/server.php";//socket server 路徑指向
         $data['username'] = $this->session->username ;
         $data['user_colour'] = $this->session->user_colour ;
+        $data['sex'] = $this->session->sex ;
+        $data['head'] = $this->session->head ;
 
         $this->load->view('chat/index',$data);
     }

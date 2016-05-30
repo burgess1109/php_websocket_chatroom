@@ -56,14 +56,19 @@ while (true) {
 				//名稱輸入
 				$join_name = $tst_msg->join_name; //sender name
 				$user_color = $tst_msg->color; //color
-				
+                $sex = $tst_msg->sex; //性別
+				$head = $tst_msg->head; //頭像
+
 				//找key值
 				$key = array_keys($clients,$changed_socket);
 				$join_list[$key[0]]['join_name']=$join_name;
 				$join_list[$key[0]]['color']=$user_color;
-				
+				$join_list[$key[0]]['sex']=$sex;
+				$join_list[$key[0]]['head']=$head;
+
 				//prepare data to be sent to client (mask 加密轉換)
-				$response_text = mask(json_encode(array('type'=>'join_name', 'join_name'=>$join_name,'color'=>$user_color,'join_list'=>$join_list)));
+				$response_text = mask(json_encode(array('type'=>'join_name', 'join_name'=>$join_name,'color'=>$user_color,
+                    'join_list'=>$join_list)));
 			}else{
 				//訊息輸入
 				$user_name = $tst_msg->name; //sender name

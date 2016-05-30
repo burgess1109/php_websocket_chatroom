@@ -55,20 +55,56 @@
                 </div>
             </div>
 
-            <button id="login_btn">登入</button>
+            <div class="sex">
+                <div class="sexinner">
+                    <p>請選擇性別:</p>
+                    <input type="radio" name="sex" value="boy"/>男 &nbsp;&nbsp;&nbsp;
+                    <input type="radio" name="sex" value="girl"/>女 &nbsp;&nbsp;&nbsp;
+                    <input type="radio" name="sex" value="other"/>其他 &nbsp;&nbsp;&nbsp;
+                </div>
+            </div>
 
+            <div class="head">
+                <div class="headinner">
+                    <p>請選擇頭像:</p>
+                    <?php
+                        foreach($head_arr as $key => $val){
+                            echo '<div id="'.$key.'" class="head_pic">';
+                            foreach($val as $k => $v) {
+                                $head_value=$key.'_'.($k+1);
+                                echo '<input type="radio" name="head" value="'.$head_value.'"/>';
+                                echo '<img src="'.base_url().'images/thumbs/head/'.$v.'"/>';
+                                echo '&nbsp;&nbsp;&nbsp;';
+                                if($k%4 == 4) echo '<br>';
+                            }
+                            echo '</div>';
+                        }
+                    ?>
+                </div>
+            </div>
+
+            <button id="login_btn">登入</button>
         </form>
 
     </div><!--loginboxinner-->
 </div><!--loginbox-->
 <script>
     jQuery(function($) {
+        //性別頭像 JS
+        $("input[name='sex']").click(function(){
+            var sex = $("input[name='sex']:checked").val();
+            $('.head_pic').hide();
+            $('#'+sex).show();
+        });
+
         $('#login_btn').click(function(){
             var check = new check_form();
 
             try{
                 if(check.check_user() == false) throw(check.error_msg);
                 if(check.check_passwd() == false) throw(check.error_msg);
+                if(check.check_sex() == false) throw(check.error_msg);
+                if(check.check_head() == false) throw(check.error_msg);
             }catch(error_msg){
                 $('.nopassword').show();
                 $('.userlogged').html('<span>'+error_msg+'</span>');
@@ -82,6 +118,8 @@
         var check_form = function(){
             var username = $("input[name='user']").val();
             var password = $("input[name='passwd']").val();
+            var sex = $("input[name='sex']:checked").val();
+            var head = $("input[name='head']:checked").val();
             this.error_msg = '';
 
             //名稱驗證
@@ -104,6 +142,32 @@
                     return false;
                 }else if(password.length < 4){
                     this.error_msg = '密碼至少4個字';
+                    return false;
+                }else{
+                    return true;
+                }
+            };
+
+            //性別驗證
+            this.check_sex= function(){
+                if(typeof(sex) == "undefined"){
+                    this.error_msg = '未選擇性別';
+                    return false;
+                }else if(sex.trim() == '' || sex==null ){
+                    this.error_msg = '未選擇性別';
+                    return false;
+                }else{
+                    return true;
+                }
+            };
+
+            //頭像驗證
+            this.check_head= function(){
+                if(typeof(head) == "undefined"){
+                    this.error_msg = '未選擇頭像';
+                    return false;
+                }else if(head.trim() == '' || head==null ){
+                    this.error_msg = '未選擇頭像';
                     return false;
                 }else{
                     return true;

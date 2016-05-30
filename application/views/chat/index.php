@@ -98,7 +98,9 @@
                     var msg = {
                         type : 'join_name',
                         join_name: name,
-                        color : '<?php echo $user_colour; ?>'
+                        color : '<?php echo $user_colour; ?>',
+                        sex : '<?php echo $sex;?>',
+                        head : '<?php echo $head;?>',
                     };
                     //convert and send data to server (連接傳送數據)
                     websocket.send(JSON.stringify(msg));
@@ -178,8 +180,12 @@
                     $('.contactlist').empty();
                     for(var index in join_list) {
                         if(join_list[index].join_name){
-                            <?php $img_path=base_url()."images/thumbs/avatar5.png"; ?>
-                            var add_html = "<li class='online new'><a href=''><img src='<?php echo $img_path;?>' alt=''><span style='color:#"+join_list[index].color+"'>"+join_list[index].join_name+"</span></a></li>";
+                            if(join_list[index].head == ''){
+                                var img_path = '<?php echo base_url()."images/thumbs/head/unknown.png"; ?>';
+                            }else{
+                                var img_path = '<?php echo base_url()."images/thumbs/head/"; ?>'+join_list[index].head+'.jpg';
+                            }
+                            var add_html = "<li class='online new'><a href=''><img src='"+img_path+"' alt=''><span style='color:#"+join_list[index].color+"'>"+join_list[index].join_name+"</span></a></li>";
                             $('.contactlist').append(add_html);
                         }
                     }
@@ -197,8 +203,12 @@
                 $('.contactlist').empty();
                 for(var index in join_list) {
                     if(join_list[index].join_name){
-                        <?php $img_path=base_url()."images/thumbs/avatar5.png"; ?>
-                        var add_html = "<li class='online new'><a href=''><img src='<?php echo $img_path;?>' alt=''><span style='color:#"+join_list[index].color+"'>"+join_list[index].join_name+"</span></a></li>";
+                        if(join_list[index].head == ''){
+                            var img_path = '<?php echo base_url()."images/thumbs/head/unknown.png"; ?>';
+                        }else{
+                            var img_path = '<?php echo base_url()."images/thumbs/head/"; ?>'+join_list[index].head+'.jpg';
+                        }
+                        var add_html = "<li class='online new'><a href=''><img src='"+img_path+"' alt=''><span style='color:#"+join_list[index].color+"'>"+join_list[index].join_name+"</span></a></li>";
                         $('.contactlist').append(add_html);
                     }
                 }

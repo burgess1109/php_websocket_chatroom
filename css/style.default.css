@@ -130,7 +130,27 @@ body.withmenucoll2 { background-position: 35px 0; } /* with menu style 2 in coll
 	padding: 15px 10px; border: 0; font-size: 14px; width: 330px; box-shadow: none; color: #666; 
 	font-family: 'RobotoCondensed', Arial, Helvetica, sans-serif;
 }
-
+.loginbox .sex {
+    background: #eee url(../images/icons/sex.png) no-repeat 13px center; -moz-border-radius: 2px; -webkit-border-radius: 2px;
+    border-radius: 2px; -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.4); -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.4);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.4); margin: 20px 0; overflow: hidden;
+}
+.loginbox .sexinner { margin-left: 45px; border-left: 1px solid #ddd; background: #fff; }
+.loginbox .sex input {
+    padding: 15px 10px; border: 0; font-size: 14px; box-shadow: none; color: #666;
+    font-family: 'RobotoCondensed', Arial, Helvetica, sans-serif;
+}
+.loginbox .head {
+    background: #eee url(../images/icons/info.png) no-repeat 13px center; -moz-border-radius: 2px; -webkit-border-radius: 2px;
+    border-radius: 2px; -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.4); -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.4);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.4); margin: 20px 0; overflow: hidden;
+}
+.head_pic{ display: none;}
+.loginbox .headinner { margin-left: 45px; border-left: 1px solid #ddd; background: #fff; }
+.loginbox .head input {
+    padding: 15px 10px; border: 0; font-size: 14px; box-shadow: none; color: #666;
+    font-family: 'RobotoCondensed', Arial, Helvetica, sans-serif;
+}
 .loginbox button { 
 	background: #f0801d url(../images/btngrad.png) repeat-x top left; border: 0; padding: 15px 0; text-align: center; 
 	font-family: 'RobotoCondensed', Arial, Helvetica, sans-serif; font-size: 14px; font-weight: normal; width: 100%; text-transform: uppercase;  
