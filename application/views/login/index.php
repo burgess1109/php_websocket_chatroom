@@ -5,12 +5,10 @@
     <title>聊天登入</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?php echo base_url().'css/style.default.css';?>" type="text/css" />
-    <script type="text/javascript" src="<?php echo base_url().'js/plugins/jquery-1.7.min.js';?>"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <script type="text/javascript" src="<?php echo base_url().'js/plugins/jquery-ui-1.8.16.custom.min.js';?>"></script>
     <script type="text/javascript" src="<?php echo base_url().'js/plugins/jquery.cookie.js';?>"></script>
     <script type="text/javascript" src="<?php echo base_url().'js/plugins/jquery.uniform.min.js';?>"></script>
-    <script type="text/javascript" src="<?php echo base_url().'js/custom/general.js';?>"></script>
-    <script type="text/javascript" src="<?php echo base_url().'js/custom/index.js';?>"></script>
     <!--[if IE 9]>
     <link rel="stylesheet" media="screen" href="<?php echo base_url().'css/style.ie9.css';?>"/>
     <![endif]-->
@@ -89,7 +87,7 @@
     </div><!--loginboxinner-->
 </div><!--loginbox-->
 <script>
-    jQuery(function($) {
+    $(document).ready(function(){
         //性別頭像 JS
         $("input[name='sex']").click(function(){
             var sex = $("input[name='sex']:checked").val();

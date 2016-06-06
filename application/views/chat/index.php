@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -7,12 +6,10 @@
     <!-- 最新編譯和最佳化的 CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?php echo base_url().'css/style.default.css';?>" type="text/css" />
-    <script type="text/javascript" src="<?php echo base_url().'js/plugins/jquery-1.7.min.js';?>"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <script type="text/javascript" src="<?php echo base_url().'js/plugins/jquery-ui-1.8.16.custom.min.js';?>"></script>
     <script type="text/javascript" src="<?php echo base_url().'js/plugins/jquery.cookie.js';?>"></script>
     <script type="text/javascript" src="<?php echo base_url().'js/plugins/jquery.uniform.min.js';?>"></script>
-    <script type="text/javascript" src="<?php echo base_url().'js/custom/general.js';?>"></script>
-    <script type="text/javascript" src="<?php echo base_url().'js/custom/index.js';?>"></script>
     <!--[if IE 9]>
     <link rel="stylesheet" media="screen" href="<?php echo base_url().'css/style.ie9.css';?>"/>
     <![endif]-->
@@ -41,10 +38,11 @@
                 <br>
                 <span id="welcome_str"></span>
                 <div class="messagebox radius2">
-                    <span class="inputbox" style="width:80%;float: left;">
+                    <span class="inputbox" style="width:70%;float: left;">
                         <input type="text" id="msgbox" name="msgbox"  />
                     </span>
-                    <button id="send-btn" class="btn btn-warning" style="float: left;">送出</button>
+                    <button id="emotion" class="btn btn-success" style="float: left;">插入表情</button>
+                    <button id="send-btn" class="btn btn-warning" style="float: left;margin-left: 20px;">送出</button>
                     <button class="btn btn-danger" id="leave-btn" style="float: left;margin-left: 20px;">登出/離開</button>
                 </div>
 
@@ -77,8 +75,10 @@
     </div><!-- centercontent -->
 </div>
 
+<!--  使用 QQFace 表情符號 JS-->
+<script type="text/javascript" src="<?php echo base_url().'js/jquery.qqFace.js';?>"></script>
 <script language="javascript" type="text/javascript">
-    jQuery(function($) {
+    $(document).ready(function(){
         //create a new WebSocket object.(建立socket物件)
         var wsUri = "<?php echo $socket_url;?>";
         websocket = new WebSocket(wsUri);
@@ -159,6 +159,7 @@
             {
                 var uname = msg.name; //user name
                 var umsg = msg.message; //message text
+                var umsg=replace_em(umsg);//QQ表情 字串轉換
                 if(uname && umsg){
                     $('#chatmessage').append("<div><span class=\"user_name\" style='color:#"+ucolor+"'>"+uname+"</span> : <span class=\"user_message\">"+umsg+"</span></div>");
                 }
@@ -219,6 +220,25 @@
 
         websocket.onerror	= function(ev){$('#chatmessage').append("<div class=\"system_error\">Error Occurred - "+ev.data+"</div>");}; //與server連接發生錯誤時
         websocket.onclose 	= function(ev){$('#chatmessage').append("<div class=\"system_msg\">Connection Closed</div>");};  //server被關閉時
+
+
+        <!--  QQFace 表情符號 -->
+        <!--  設定qqFace  參數 -->
+        $('#emotion').qqFace({
+            id : 'facebox', //表情盒子的ID
+            assign:'msgbox', //對話輸入input控件ID
+            path:'<?php echo base_url().'images/face/';?>'	//表情存放的路径
+        });
+
+        //查看结果(表情符號轉換)
+        function replace_em(str){
+            str = str.replace(/\</g,'&lt;');
+            str = str.replace(/\>/g,'&gt;');
+            str = str.replace(/\n/g,'<br/>');
+            str = str.replace(/\[em_([0-9]*)\]/g,'<img src="<?php echo base_url().'images/face';?>/$1.gif" border="0" />');
+            return str;
+        }
+
     });
 </script>
 </body>
