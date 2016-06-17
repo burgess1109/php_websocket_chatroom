@@ -6,19 +6,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?php echo base_url().'css/style.default.css';?>" type="text/css" />
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-    <script type="text/javascript" src="<?php echo base_url().'js/plugins/jquery-ui-1.8.16.custom.min.js';?>"></script>
-    <script type="text/javascript" src="<?php echo base_url().'js/plugins/jquery.cookie.js';?>"></script>
-    <script type="text/javascript" src="<?php echo base_url().'js/plugins/jquery.uniform.min.js';?>"></script>
-    <!--[if IE 9]>
-    <link rel="stylesheet" media="screen" href="<?php echo base_url().'css/style.ie9.css';?>"/>
-    <![endif]-->
-    <!--[if IE 8]>
-    <link rel="stylesheet" media="screen" href="<?php echo base_url().'css/style.ie8.css';?>"/>
-    <![endif]-->
-    <!--[if lt IE 9]>
-    <script src="<?php echo base_url().'js/plugins/css3-mediaqueries.js';?>"></script>
-    <![endif]-->
-</head>
+    <script type="text/javascript" src=" http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.24/jquery-ui.min.js"></script></head>
 
 <body class="loginpage">
 <div class="loginbox">

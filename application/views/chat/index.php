@@ -7,18 +7,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?php echo base_url().'css/style.default.css';?>" type="text/css" />
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-    <script type="text/javascript" src="<?php echo base_url().'js/plugins/jquery-ui-1.8.16.custom.min.js';?>"></script>
-    <script type="text/javascript" src="<?php echo base_url().'js/plugins/jquery.cookie.js';?>"></script>
-    <script type="text/javascript" src="<?php echo base_url().'js/plugins/jquery.uniform.min.js';?>"></script>
-    <!--[if IE 9]>
-    <link rel="stylesheet" media="screen" href="<?php echo base_url().'css/style.ie9.css';?>"/>
-    <![endif]-->
-    <!--[if IE 8]>
-    <link rel="stylesheet" media="screen" href="<?php echo base_url().'css/style.ie8.css';?>"/>
-    <![endif]-->
-    <!--[if lt IE 9]>
-    <script src="<?php echo base_url().'js/plugins/css3-mediaqueries.js';?>"></script>
-    <![endif]-->
+    <script type="text/javascript" src=" http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.24/jquery-ui.min.js"></script>
 </head>
 <body>
 <div class="bodywrapper">
@@ -53,19 +42,14 @@
         <div class="rightpanel">
             <div class="rightpanelinner">
                 <div class="widgetbox uncollapsible">
-                    <div class="title"><h4>Online Users</h4></div>
+                    <div class="title"><h4>線上使用者</h4></div>
                     <div class="widgetcontent nopadding">
-                        <div class="chatsearch">
-                            <input type="text" name="" value="Search" />
-                        </div>
+                        <!--
+                                                        <div class="chatsearch">
+                                                            <input type="text" name="" value="Search" />
+                                                        </div>
+                                                        -->
                         <ul class="contactlist">
-                            <li class="online new"><a href=""><img src="<?php echo base_url().'images/thumbs/avatar5.png';?>" alt="" /> <span>Hiccup Haddock III</span></a><span class="msgcount">3</span></li>
-                            <li><a href=""><img src="<?php echo base_url().'images/thumbs/avatar6.png';?>" alt="" /> <span>Astrid Hofferson</span></a></li>
-                            <li class="online"><a href=""><img src="<?php echo base_url().'images/thumbs/avatar7.png';?>" alt="" /> <span>Vector</span></a></li>
-                            <li class="online"><a href=""><img src="<?php echo base_url().'images/thumbs/avatar8.png';?>" alt="" /> <span>Puss in Boots</span></a></li>
-                            <li class="online new"><a href=""><img src="<?php echo base_url().'images/thumbs/avatar9.png';?>" alt="" /> <span>Humpty Dumpty</span></a><span class="msgcount">1</span></li>
-                            <li><a href=""><img src="<?php echo base_url().'images/thumbs/avatar10.png';?>" alt="" /> <span>Shrek</span></a></li>
-                            <li><a href=""><img src="<?php echo base_url().'images/thumbs/avatar11.png';?>" alt="" /> <span>Princess Fiona</span></a></li>
                         </ul>
                     </div><!--widgetcontent-->
                 </div><!--widgetbox-->
