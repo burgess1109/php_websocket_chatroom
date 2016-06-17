@@ -2,7 +2,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>聊天系統</title>
+    <title>OOXX.Talk</title>
     <!-- 最新編譯和最佳化的 CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?php echo base_url().'css/style.default.css';?>" type="text/css" />
@@ -13,7 +13,7 @@
 <div class="bodywrapper">
     <div class="centercontent">
         <div class="pageheader notab">
-                <h1 class="pagetitle">OOXX. Talk</h1>
+                <h1 class="pagetitle">OOXX.Talk</h1>
                 <span class="pagedesc">這是一個簡單的聊天室</span>
         </div><!--pageheader-->
 

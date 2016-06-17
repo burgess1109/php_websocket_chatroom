@@ -1,70 +1,47 @@
 ###################
-What is CodeIgniter
+OOXX.Talk PHP Socket 聊天室 (OOXX.Talk PHP Socket Chatroom)
 ###################
 
-CodeIgniter is an Application Development Framework - a toolkit - for people
-who build web sites using PHP. Its goal is to enable you to develop projects
-much faster than you could if you were writing code from scratch, by providing
-a rich set of libraries for commonly needed tasks, as well as a simple
-interface and logical structure to access these libraries. CodeIgniter lets
-you creatively focus on your project by minimizing the amount of code needed
-for a given task.
+OOXX.Talk 為 PHP Socket 簡易聊天室範例，以 CodeIgniter 3.0 為框架製作，提供簡單的登入、聊天及發送表情符號功能
 
-*******************
-Release Information
-*******************
-
-This repo contains in-development code for future releases. To download the
-latest stable release please visit the `CodeIgniter Downloads
-<https://codeigniter.com/download>`_ page.
 
 **************************
-Changelog and New Features
+修改記錄 (Changelog and New Features)
 **************************
 
+您可以從連結查詢修改記錄  `user
+guide change log <https://github.com/burgess1109/php_websocket_chatroom/changelog.rst>`_.
 You can find a list of all changes for each release in the `user
-guide change log <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/changelog.rst>`_.
+guide change log <https://github.com/burgess1109/php_websocket_chatroom/changelog.rst>`_.
 
 *******************
-Server Requirements
+需求及說明(Requirements & Explanation)
 *******************
 
-PHP version 5.4 or newer is recommended.
+-  PHP 版本 5.2.4 或者更高版本。(PHP version 5.2.4 or newer is recommended.)
+-  需要php_sockets擴展套件。 (php_sockets extension needed.)
+-  檔案已含CodeIgniter 3.0.6及qqFace表情插件。 (CodeIgniter 3.0.6 & qqFace plugin included.)
 
-It should work on 5.2.4 as well, but we strongly advise you NOT to run
-such old versions of PHP, because of potential security and performance
-issues, as well as missing features.
 
 ************
-Installation
+使用說明
 ************
 
-Please see the `installation section <https://codeigniter.com/user_guide/installation/index.html>`_
-of the CodeIgniter User Guide.
+-  OOXX.Talk 使用 Sanwebe.com `PHP Socket 範例 <https://www.sanwebe.com/2013/05/chat-using-websocket-php-socket>`_ 為基底擴充，下載後需先執行根目錄下的 server.php 檔案 (參考指令: php -q server.php)，再開啟網頁
+-  server.php 可指定Socket的 host 及 port
+-  controller/Chat.php @index 的 $data['socket_url'] 需指向 server.php 的路徑
+-  登入密碼預設 123@456 (controller/Login.php @check )
+-  表情插件使用 `qqFace <http://www.helloweba.com/view-blog-202.html>`_
+-  本範例為PHP框架+PHP Socket簡單實作，程式內容僅供參考，歡迎高手大大們指教
 
-*******
-License
-*******
-
-Please see the `license
-agreement <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/license.rst>`_.
 
 *********
-Resources
+參考來源(Resources)
 *********
 
--  `User Guide <https://codeigniter.com/docs>`_
--  `Language File Translations <https://github.com/bcit-ci/codeigniter3-translations>`_
--  `Community Forums <http://forum.codeigniter.com/>`_
--  `Community Wiki <https://github.com/bcit-ci/CodeIgniter/wiki>`_
--  `Community IRC <https://webchat.freenode.net/?channels=%23codeigniter>`_
+-  `Sanwebe PHP Socket<https://www.sanwebe.com/2013/05/chat-using-websocket-php-socket>`_
+-  `CodeIgniter <https://codeigniter.org.tw/>`_
+-  `qqFace <http://www.helloweba.com/view-blog-202.html>`_
+-  `chinaz 模板 <http://sc.chinaz.com/>`_
 
-Report security issues to our `Security Panel <mailto:security@codeigniter.com>`_
-or via our `page on HackerOne <https://hackerone.com/codeigniter>`_, thank you.
 
-***************
-Acknowledgement
-***************
-
-The CodeIgniter team would like to thank EllisLab, all the
-contributors to the CodeIgniter project and you, the CodeIgniter user.
