@@ -6,12 +6,12 @@ OOXX.Talk 為 PHP Socket 簡易聊天室範例，以 CodeIgniter 3.0 為框架�
 
 登入介面
 
-..  image:: /images/img_1.jpg
+..  image:: /images/demo_img_1.jpg
 
 
 聊天介面
 
-..  image:: /images/img_2.jpg
+..  image:: /images/demo_img_2.jpg
 
 
 **************************
