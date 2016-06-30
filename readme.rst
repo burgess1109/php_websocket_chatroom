@@ -4,6 +4,15 @@ OOXX.Talk PHP Socket 聊天室 (OOXX.Talk PHP Socket Chatroom)
 
 OOXX.Talk 為 PHP Socket 簡易聊天室範例，以 CodeIgniter 3.0 為框架製作，提供簡單的登入、聊天及發送表情符號功能
 
+登入介面
+
+..  image:: /images/img_1.jpg
+
+
+聊天介面
+
+..  image:: /images/img_2.jpg
+
 
 **************************
 修改記錄 (Changelog and New Features)
